@@ -1,0 +1,35 @@
+*{
+	font-family: 'Open Sans', san-serif;
+}
+
+body { 
+ 	padding-top: 60px; 
+ 	background: #ffe16b;
+ 	text-align: center;
+	/*background: linear-gradient(#ffe16b, #fff4c8); /* Standard syntax */
+}
+
+ h1 {
+  font-size: 100px;
+  color: #444444;
+}
+
+input {
+	font-size: 50px;
+	color: #555;
+	border: none;
+	background-color: #eeefff; 
+	padding: 10px;  
+}
+
+label {
+	font-size: 20px;
+	color: #fff;
+}
+
+
+input[type=submit] {
+    background-color: #dddddd;    
+    border-color: #ccc;
+    
+}
