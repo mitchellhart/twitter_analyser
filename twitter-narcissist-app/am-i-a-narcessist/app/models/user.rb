@@ -77,20 +77,16 @@ require 'twitter'
   @@score = nil 
 
   def calculate_score(matches, total)
-    @@score =  (matches.count.to_f / total.to_f)
+    # divide scores by our highest score for a range of 0 - 1, 
+    # then multiply by 10 for our 1-10 scoring.
+    @@score =  (matches.count.to_f / total.to_f) / 0.0457 * 10
 
   end
 
 
-  # Assuming you want a linear mapping from your first range (1-3) to your second (1000-0, descending), 
-  # this will be your function:
-
-  # y = (3 - x) / 2 * 1000
-  # where x is the input (1 <= x <= 3) and y is the output (0 <= y <= 1000).
-
   def run
     current_user.start_parse
-    @handle.score_f = @@score.round(5)
+    @handle.score_f = @@score.round(1)
     @handle.save
 
   end

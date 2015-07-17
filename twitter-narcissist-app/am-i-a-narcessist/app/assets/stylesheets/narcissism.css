@@ -2,27 +2,20 @@
 	font-family: 'Open Sans', san-serif;
 }
 
-.relative{
-	margin:0 auto;
-	position: relative;
-	height: 100px;
-	width: 880px;
-}
+
 
 #title{
 	opacity: 0;
-	position: absolute;
 	top: -50;
+
 }
 
-.form-group{
-	position: absolute;
+.form{
 	top: -300;
 }
 
-
 body { 
-	position: relative;
+	
  	padding-top: 60px; 
  	background: #212121;
  	text-align: center;
