@@ -7,8 +7,12 @@ require 'rubygems'
 require 'twitter'
 
   
-@handle = User.last
-@all_tweets = nil
+  def current_user
+    @handle = User.last
+  end
+
+  @handle = User.last
+  @all_tweets = nil
   def start_parse
     
     #add narcessistic terms to the array to get  more accurate score
@@ -51,7 +55,6 @@ require 'twitter'
 
   end #end start_parse
 
-  
 
   def parse_tweets(tweets)
     tweet_text = []
@@ -71,15 +74,15 @@ require 'twitter'
     calculate_score(match, total)
   end
   
-
+@@score = nil
   def calculate_score(matches, total)
-    @score =  (matches.count.to_f / total.to_f)
+    @@score =  (matches.count.to_f / total.to_f)
   end
 
-  
-  @handle.start_parse
-  @handle.score_f = @score
-  @handle.save
+  def run
+    current_user.start_parse
+    @handle.score_f = @@score
+    @handle.save
+  end
 
-  
 end
