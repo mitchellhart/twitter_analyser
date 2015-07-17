@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @handle.name = params[:handle]
     @handle.save
     @handle.run
-
+    
     redirect_to "/show/#{@handle.id}"
   end
 
