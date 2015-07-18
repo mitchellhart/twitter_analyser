@@ -2,38 +2,50 @@
 	font-family: 'Open Sans', san-serif;
 }
 
-
-
 #title{
 	opacity: 0;
 	top: -50;
-
 }
 
 .form{
 	top: -300;
 }
 
+a { 
+	color: inherit;
+ } 
+a:hover { 
+	color: inherit;
+} 
+a:visited { 
+	color: inherit;
+}
+
 body { 
-	
- 	padding-top: 60px; 
+	padding-top: 60px; 
  	background: #212121;
  	text-align: center;
 }
 
 h1 {
-  font-size: 80px;
-  color: #f3f3f3;
+	font-size: 80px;
+	color: #f3f3f3;
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 50px;
   color: #f6f6f6;
+  margin: auto;
+  
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 30px;
   color: #e6e6e6;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-style: italic;
+
 }
 
 input {
@@ -53,9 +65,15 @@ label {
 	color: #fff;
 }
 
+#top-right{
+	position:absolute; 
+	top:0; 
+	right:10;
+}
+
+
 
 input[type=submit] {
     background-color: #212121;    
-    /*border-color: #ccc;*/
     
 }

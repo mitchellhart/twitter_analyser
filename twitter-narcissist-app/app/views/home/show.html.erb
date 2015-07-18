@@ -1,13 +1,31 @@
-<h2>Hi, @<%= @handle.name %></h2>
+<br><br><br>
+<h3>Hi, @<%= @handle.name %></h3>
 
-<% if @handle.score_f > 0 && @handle.score_f < 4  %>
-	<h2>You are not a narcessist. Nice work.</h2>
-<% elsif @handle.score_f > 5 && @handle.score_f < 7 %>
-		<h2> You are kind of a narcessist. </h2>
-<% elsif @handle.score_f > 7 && @handle.score_f < 11 %>
-		<h2> You are a narcessist. Did you even have to ask?. </h2>
-<%end  %>
+<%if @handle.score_f > 0 && @handle.score_f < 4  %>
+	<h2><%= @handle.score_f %> out of 10. You are not a narcessist.</h2><br>
+	<h3>Nice work.</h3>
+<%elsif @handle.score_f > 5 && @handle.score_f < 7 %>
+		<h2><%= @handle.score_f %> out of 10. You are kind of a narcessist. </h2>
+<%elsif @handle.score_f > 7 && @handle.score_f < 11 %>
+		<h2><%= @handle.score_f %> out of 10. You are a narcessist.</h2><br> 
+		<h3>Did you even have to ask?. </h3>
+<%else%>
+		<h3>You're literally off our charts. What. The. Fuck. </h3>
+<%end%>
 <br>
-<h1>Your score is <%= @handle.score_f %> out of 10.</h1>
+<h3>Your closest celebrity match is <%= @celeb[0] %>.</h3>
+<button type="button" class="btn btn-lg btn-danger">
+  <a href="#">Try Another?</a>
+</button>
 
-<!-- <h3>visitor # <%= @handle.id %></h3> -->
+<button type="button" class="btn btn-lg btn-primary">
+Share
+</button>
+
+
+
+<!-- 
+<br>
+<div id="top-right">
+<button type="button" class="btn btn-lg" data-toggle="popover" title="Alert!" data-placement="right" data-content="Score for entertainment purposes only.">?</button>
+</div> -->

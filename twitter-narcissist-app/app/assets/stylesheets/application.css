@@ -13,8 +13,9 @@
  *= require_tree .
  *= require_self
  *= require 'narcissism'
+ *= require bootstrap.min.css
  */
 
- *= require bootstrap.min
+ 
 
  

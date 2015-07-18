@@ -15,7 +15,7 @@ class HomeController < ApplicationController
   def show
   
     @handle = User.find(params[:id])
-    
+    @celeb = @handle.find_closest_celeb
   end
 
 

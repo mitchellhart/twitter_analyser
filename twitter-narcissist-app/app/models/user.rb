@@ -79,7 +79,8 @@ require 'twitter'
   def calculate_score(matches, total)
     # divide scores by our highest score for a range of 0 - 1, 
     # then multiply by 10 for our 1-10 scoring.
-    @@score =  (matches.count.to_f / total.to_f) / 0.0457 * 10
+    @prescore = (matches.count.to_f / total.to_f)
+    @@score = (matches.count.to_f / total.to_f) / 0.04574170332 * 10
 
   end
 
@@ -90,5 +91,32 @@ require 'twitter'
     @handle.save
 
   end
+
+  @@celebs = {
+
+    lenaDunham: 10,
+    kanyewest: 0.04254201681,
+    kimkardashian: 0.04018315771,
+    mitchellhart:  0.03651,
+    emwatson: 0.03454,
+    charlieSheen:  0.03241,
+    ninorosella: 0.03236,
+    georgeciobanu: 0.03018,
+    jeffkatzy: 0.02857,
+    oprah: 0.027,
+    aviflombaum: 0.0258,
+    annaershova: 0.02315,
+    billgates: 0.019,
+    benedictCumb:  0.01877,
+    realDonaldTrump: 0.01865827297,
+    pontifex:  0.008777429467,
+    dalailama: 0.005292289765
+
+    }
+
+  def find_closest_celeb
+    @@celebs.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs } 
+  end
+
 
 end
