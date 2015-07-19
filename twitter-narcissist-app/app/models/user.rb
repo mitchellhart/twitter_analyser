@@ -96,9 +96,9 @@ class User < ActiveRecord::Base
     jeffkatzy: 6.245,
     oprah: 5.902,
     aviflombaum: 5.64,
+    realDonaldTrump: 4.079,
     billgates: 4.153,
     benedictCumb:  4.103,
-    realDonaldTrump: 4.079,
     pontifex:  1.918,
     dalailama: 1.156
     }
