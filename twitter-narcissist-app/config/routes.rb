@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get '/show/:id' => 'home#show'
   post 'home/index' => 'home#new', as: :post
-
+  get '/topten' => 'home#topten'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

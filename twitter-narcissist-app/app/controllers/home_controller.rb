@@ -18,5 +18,12 @@ class HomeController < ApplicationController
     @celeb = @handle.find_closest_celeb
   end
 
+  def topten
+    
+    @topten = User.select(:name, :score_f).order(score_f: :desc).limit(10)
+     
+
+  end
+
 
 end
