@@ -2,34 +2,55 @@
 
 <!-- greets user with appropriate handle name --> 
 <% if @handle.name.include?("@") %>
-  <h3>Hi, <%= @handle.name %></h3>
+  <h3>Hi, <%= @handle.name %>!</h3>
   <% else %>
-  <h3>Hi, @<%= @handle.name %></h3>
+  <h3>Hi, @<%= @handle.name %>!</h3>
 <% end %>
 
 <!-- informs user of their score --> 
-<%if @handle.score_f > 0 && @handle.score_f < 4  %>
-	<h2><%= @handle.score_f %> out of 10. You are not a narcissist.</h2><br>
+<%if @handle.score_f <= 4 %>
+	<h2>
+    <%= @handle.score_f %> out of 10. You are not a narcissist.
+  </h2><br>
 	<h3>Nice work.</h3>
-<%elsif @handle.score_f > 5 && @handle.score_f < 7 %>
-		<h2><%= @handle.score_f %> out of 10. You are kind of a narcissist. </h2>
-<%elsif @handle.score_f > 7 && @handle.score_f < 11 %>
-		<h2><%= @handle.score_f %> out of 10. You are a narcissist.</h2><br> 
+<%elsif @handle.score_f > 4 && @handle.score_f <= 7 %>
+		<h2>
+      <%= @handle.score_f %> out of 10. You are kind of a narcissist. 
+    </h2>
+<%elsif @handle.score_f > 7 && @handle.score_f < 10 %>
+		<h2>
+      <%= @handle.score_f %> out of 10. You are a narcissist.
+    </h2>
+    <br> 
 		<h3>Did you even have to ask?. </h3>
 <%else%>
 		<h3>You're literally off our charts. What. The. Fuck. </h3>
 <%end%>
+
 <br>
-<h3>Your closest celebrity match is <a href="http://www.twitter.com/<%= @celeb[0]%>" target="_blank"> <%= @celeb[0]%></a>.</h3>
+
+<!-- informs user of their celebrity match --> 
+<h3> 
+  Your closest celebrity match is: <br> 
+  <a href="http://www.twitter.com/<%= @celeb[0]%>" target="_blank"> <%= @celeb[0]%></a>
+</h3>
+
+<!-- adds a photo of celebrity the user has matched with --> 
+<!-- <p> 
+  <% if @celeb[0] %>
+    <img src="https://pbs.twimg.com/profile_images/529214699041067008/fqPBAr5s_200x200.jpeg" alt="Mountain View"> 
+  <% end %>
+</p> -->
+
+<br>
+<!-- offers buttons for trying another handle or for sharing on social media -->
 <button type="button" class="btn btn-lg btn-danger">
   <a href="/">Try Another?</a>
 </button>
 
 <button type="button" class="btn btn-lg btn-primary">
-<a href="#">Share</a>
+  <a href="#">Share</a>
 </button>
-
-
 
 <!-- 
 <br>
