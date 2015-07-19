@@ -95,22 +95,18 @@ require 'twitter'
   @@celebs = {
 
     lenaDunham: 10,
-    kanyewest: 0.04254201681,
-    kimkardashian: 0.04018315771,
-    mitchellhart:  0.03651,
-    emwatson: 0.03454,
-    charlieSheen:  0.03241,
-    ninorosella: 0.03236,
-    georgeciobanu: 0.03018,
-    jeffkatzy: 0.02857,
-    oprah: 0.027,
-    aviflombaum: 0.0258,
-    annaershova: 0.02315,
-    billgates: 0.019,
-    benedictCumb:  0.01877,
-    realDonaldTrump: 0.01865827297,
-    pontifex:  0.008777429467,
-    dalailama: 0.005292289765
+    kanyewest: 9.3,
+    kimkardashian: 8.78,
+    emwatson: 7.55,
+    charlieSheen:  7.08,
+    jeffkatzy: 6.245,
+    oprah: 5.902,
+    aviflombaum: 5.64,
+    billgates: 4.153,
+    benedictCumb:  4.103,
+    realDonaldTrump: 4.079,
+    pontifex:  1.918,
+    dalailama: 1.156
 
     }
 
