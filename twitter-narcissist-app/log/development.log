@@ -27944,3 +27944,271 @@ Processing by HomeController#show as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 130]]
   Rendered home/show.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 214ms (Views: 209.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/show/130" for ::1 at 2015-07-19 16:41:20 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"130"}
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 130]]
+  Rendered home/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 419ms (Views: 342.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:41:22 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:41:25 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (74.9ms)
+Completed 500 Internal Server Error in 104ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: 	<h1 id="title" >Are you a narcissist?</h1>
+    2: 
+    3:   <% unless /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(@handle.name.strip) %>
+    4:     "Try again with a valid handle."
+    5:   <% end %> 
+    6: 
+  app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___1449981094739453507_70242047300720'
+
+
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (38.7ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (246.0ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (3.2ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.7ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.2ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (175.1ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.4ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (390.6ms)
+
+
+Started PUT "/console/repl_sessions/7e0351de7ad18cd641c0324f2beb96fe" for ::1 at 2015-07-19 16:41:41 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:42:04 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (46.0ms)
+Completed 500 Internal Server Error in 87ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     7: 		<%= submit_tag(" find out ") %>
+     8: 	<% end %>
+     9: 	
+    10:     <% unless /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(@handle.name.strip) %>
+    11:     "Try again with a valid handle."
+    12:   <% end %> 
+    13: 
+  app/views/home/index.html.erb:10:in `_app_views_home_index_html_erb___1449981094739453507_70242225431040'
+
+
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (45.6ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.7ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (259.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.1ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.1ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (167.3ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (414.4ms)
+
+
+Started PUT "/console/repl_sessions/3615ca001306362ed4708e45513364f7" for ::1 at 2015-07-19 16:42:12 -0400
+
+
+Started PUT "/console/repl_sessions/3615ca001306362ed4708e45513364f7" for ::1 at 2015-07-19 16:42:20 -0400
+
+
+Started PUT "/console/repl_sessions/3615ca001306362ed4708e45513364f7" for ::1 at 2015-07-19 16:42:30 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:42:59 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 323ms (Views: 319.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:43:00 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:43:01 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:43:01 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:49:31 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 185ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:49:31 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:50:26 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 218ms (Views: 203.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:50:27 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:52:57 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 680ms (Views: 670.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:52:58 -0400
