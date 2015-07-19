@@ -2,9 +2,10 @@ class User < ActiveRecord::Base
 
   # score_i => integer score
   # score_f => float score
-
-require 'rubygems'
-require 'twitter'
+  #has_one :handle
+  #validates_presence_of :handle, :message => "Please enter a Twitter Handle."
+# require 'rubygems' -- no need to require rubygem explicitly 
+# require 'twitter'
 
   
   def current_user
@@ -13,11 +14,9 @@ require 'twitter'
 
   @handle = User.last
   @all_tweets = nil
-  def start_parse
-    
-    #add narcessistic terms to the array to get  more accurate score
-    
 
+  def start_parse
+    #add narcissistic terms to the array to get  more accurate score
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
       config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
@@ -25,14 +24,11 @@ require 'twitter'
       config.access_token_secret = "fS0NBEqzFLYLvxuFRkxcMjMQlA0gS1Dzq0t36zmCGYaij"
     end
 
-
     def collect_with_max_id(collection=[], max_id=nil, &block)
       response = yield(max_id)
       collection += response
       response.empty? ? collection.flatten : collect_with_max_id(collection, response.last.id - 1, &block)
     end
-
-
 
       def client.get_all_tweets(user)
         begin
@@ -81,7 +77,6 @@ require 'twitter'
     # then multiply by 10 for our 1-10 scoring.
     @prescore = (matches.count.to_f / total.to_f)
     @@score = (matches.count.to_f / total.to_f) / 0.04574170332 * 10
-
   end
 
 
@@ -89,7 +84,6 @@ require 'twitter'
     current_user.start_parse
     @handle.score_f = @@score.round(1)
     @handle.save
-
   end
 
   @@celebs = {
@@ -107,12 +101,10 @@ require 'twitter'
     realDonaldTrump: 4.079,
     pontifex:  1.918,
     dalailama: 1.156
-
     }
 
   def find_closest_celeb
     @@celebs.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs } 
   end
-
 
 end

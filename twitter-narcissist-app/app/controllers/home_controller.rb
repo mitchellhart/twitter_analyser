@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
+
+  class HandleError < StandardError
+  end
+
   def index
 
   end
@@ -6,10 +10,14 @@ class HomeController < ApplicationController
   def new
     @handle = User.new
     @handle.name = params[:handle]
-    @handle.save
-    @handle.run
-    
-    redirect_to "/show/#{@handle.id}"
+    if @handle.name = ""
+      flash[:notice] = "This user is not activated."
+      redirect_to "/"
+    else 
+      @handle.save
+      @handle.run
+      redirect_to "/show/#{@handle.id}"
+    end
   end
 
   def show
