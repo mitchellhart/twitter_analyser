@@ -1,11 +1,13 @@
 <br><br><br>
 
+<!-- greets user with appropriate handle name --> 
 <% if @handle.name.include?("@") %>
   <h3>Hi, <%= @handle.name %></h3>
   <% else %>
   <h3>Hi, @<%= @handle.name %></h3>
 <% end %>
 
+<!-- informs user of their score --> 
 <%if @handle.score_f > 0 && @handle.score_f < 4  %>
 	<h2><%= @handle.score_f %> out of 10. You are not a narcissist.</h2><br>
 	<h3>Nice work.</h3>

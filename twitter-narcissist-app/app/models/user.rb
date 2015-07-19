@@ -30,27 +30,27 @@ class User < ActiveRecord::Base
       response.empty? ? collection.flatten : collect_with_max_id(collection, response.last.id - 1, &block)
     end
 
-      def client.get_all_tweets(user)
-        begin
-          collect_with_max_id do |max_id|
-            options = {count: 200, include_rts: true}
-            options[:max_id] = max_id unless max_id.nil?
-            user_timeline(user, options)
-            end
-            rescue Twitter::Error::TooManyRequests => error
-            # NOTE: Your process could go to sleep for up to 15 minutes but if you
-            # retry any sooner, it will almost certainly fail with the same exception.
-            sleep error.rate_limit.reset_in + 1
-            retry
+    def client.get_all_tweets(user)
+      begin
+        collect_with_max_id do |max_id|
+          options = {count: 200, include_rts: true}
+          options[:max_id] = max_id unless max_id.nil?
+          user_timeline(user, options)
         end
+        
+        rescue Twitter::Error::TooManyRequests => error
+          # NOTE: Your process could go to sleep for up to 15 minutes but if you
+          # retry any sooner, it will almost certainly fail with the same exception.
+        sleep error.rate_limit.reset_in + 1
+        retry
+      end
     end
       
       @handle = User.last
       @all_tweets = client.get_all_tweets("#{@handle.name}")
       parse_tweets(@all_tweets)
 
-  end #end start_parse
-
+  end #ends start_parse
 
   def parse_tweets(tweets)
     tweet_text = []
