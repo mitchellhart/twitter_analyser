@@ -2,9 +2,9 @@
 
 <!-- greets user with appropriate handle name --> 
 <% if @handle.name.include?("@") %>
-  <h3>Hi, <%= @handle.name %>!</h3>
+  <h3>Hi, <%= @handle.name.downcase %>!</h3>
   <% else %>
-  <h3>Hi, @<%= @handle.name %>!</h3>
+  <h3>Hi, @<%= @handle.name.downcase %>!</h3>
 <% end %>
 
 <!-- informs user of their score --> 
