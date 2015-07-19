@@ -1,5 +1,10 @@
 <br><br><br>
-<h3>Hi, @<%= @handle.name %></h3>
+
+<% if @handle.name.include?("@") %>
+  <h3>Hi, <%= @handle.name %></h3>
+  <% else %>
+  <h3>Hi, @<%= @handle.name %></h3>
+<% end %>
 
 <%if @handle.score_f > 0 && @handle.score_f < 4  %>
 	<h2><%= @handle.score_f %> out of 10. You are not a narcissist.</h2><br>
