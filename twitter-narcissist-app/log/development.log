@@ -27545,3 +27545,402 @@ Processing by HomeController#show as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 122]]
   Rendered home/show.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/show/122" for ::1 at 2015-07-19 16:20:29 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"122"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 122]]
+  Rendered home/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 623ms (Views: 583.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:20:30 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:20:32 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 170ms (Views: 169.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:20:36 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bPmOJXOqG9qY0pGCu7BlhTqJdBLy9iXqv1gRJgvjENRY1UNV6tCOUoUbdnpmpvdoUGj4B0t8MEhjXWI8aRCsYg==", "handle"=>"annaershova", "commit"=>" find out "}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "annaershova"], ["created_at", "2015-07-19 20:20:36.985523"], ["updated_at", "2015-07-19 20:20:36.985523"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["score_f", 5.0], ["updated_at", "2015-07-19 20:20:38.690151"], ["id", 123]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/show/123
+Completed 302 Found in 1714ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/show/123" for ::1 at 2015-07-19 16:20:38 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"123"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 123]]
+  Rendered home/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 89ms (Views: 86.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:20:49 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yysxVtixsco1glog7thWbS7M/QoG0DtAuwj4gsI7x9j/B/wmQcskQihLvdgzzsSARC1xH79aLuJnDYuYoMh7bg==", "handle"=>"annaershova", "commit"=>" find out "}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+Completed 500 Internal Server Error in 113ms
+
+NoMethodError (undefined method `handle_valid?' for #<HomeController:0x007fc5078a0240>):
+  app/controllers/home_controller.rb:9:in `new'
+
+
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.4ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (130.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (3.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (74.0ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (153.5ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:21:15 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yysxVtixsco1glog7thWbS7M/QoG0DtAuwj4gsI7x9j/B/wmQcskQihLvdgzzsSARC1xH79aLuJnDYuYoMh7bg==", "handle"=>"annaershova", "commit"=>" find out "}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "annaershova"], ["created_at", "2015-07-19 20:21:17.465126"], ["updated_at", "2015-07-19 20:21:17.465126"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score_f", 5.0], ["updated_at", "2015-07-19 20:21:19.265753"], ["id", 124]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/show/124
+Completed 302 Found in 3268ms (ActiveRecord: 4.0ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:21:20 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yysxVtixsco1glog7thWbS7M/QoG0DtAuwj4gsI7x9j/B/wmQcskQihLvdgzzsSARC1xH79aLuJnDYuYoMh7bg==", "handle"=>"annaershova", "commit"=>" find out "}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "annaershova"], ["created_at", "2015-07-19 20:21:20.441149"], ["updated_at", "2015-07-19 20:21:20.441149"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score_f", 5.0], ["updated_at", "2015-07-19 20:21:21.968457"], ["id", 125]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/show/125
+Completed 302 Found in 1533ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/show/125" for ::1 at 2015-07-19 16:21:21 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"125"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 125]]
+  Rendered home/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-07-19 16:21:39 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 97ms (Views: 95.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:21:53 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tcudwa0+CbbVrirF18U1Uy/iXpGhb4l8aLeMvYMdaz1551CxNEScPshnzT0K06e+RQPShBjlnN60sv+n4e7Xiw==", "handle"=>"anna ershova", "commit"=>" find out "}
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "anna ershova"], ["created_at", "2015-07-19 20:21:53.381123"], ["updated_at", "2015-07-19 20:21:53.381123"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["score_f", 8.0], ["updated_at", "2015-07-19 20:21:58.670696"], ["id", 126]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/show/126
+Completed 302 Found in 5307ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/show/126" for ::1 at 2015-07-19 16:21:58 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"126"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 126]]
+  Rendered home/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:22:14 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tcudwa0+CbbVrirF18U1Uy/iXpGhb4l8aLeMvYMdaz1551CxNEScPshnzT0K06e+RQPShBjlnN60sv+n4e7Xiw==", "handle"=>"anna", "commit"=>" find out "}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "anna"], ["created_at", "2015-07-19 20:22:14.269962"], ["updated_at", "2015-07-19 20:22:14.269962"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score_f", 7.3], ["updated_at", "2015-07-19 20:22:14.847329"], ["id", 127]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/show/127
+Completed 302 Found in 583ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/show/127" for ::1 at 2015-07-19 16:22:14 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"127"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 127]]
+  Rendered home/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:22:23 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tcudwa0+CbbVrirF18U1Uy/iXpGhb4l8aLeMvYMdaz1551CxNEScPshnzT0K06e+RQPShBjlnN60sv+n4e7Xiw==", "handle"=>" anna", "commit"=>" find out "}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-19 16:22:23 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:29:00 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SCbsUJaxBcUrpHzndBBqXBRyFIy3OCsuWwwJ6oZ6Pm58CiEgD8uQTTZtmx+pBvixfpOYmQ6yPoyHCXrw5ImC2A==", "handle"=>"annaershova", "commit"=>" find out "}
+  [1m[35m (0.9ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "annaershova"], ["created_at", "2015-07-19 20:29:00.699444"], ["updated_at", "2015-07-19 20:29:00.699444"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["score_f", 5.0], ["updated_at", "2015-07-19 20:29:02.977413"], ["id", 128]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/show/128
+Completed 302 Found in 2312ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/show/128" for ::1 at 2015-07-19 16:29:03 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"128"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 128]]
+  Rendered home/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 170ms (Views: 168.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:31:31 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SCbsUJaxBcUrpHzndBBqXBRyFIy3OCsuWwwJ6oZ6Pm58CiEgD8uQTTZtmx+pBvixfpOYmQ6yPoyHCXrw5ImC2A==", "handle"=>"mitchellhart", "commit"=>" find out "}
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "mitchellhart"], ["created_at", "2015-07-19 20:31:31.545261"], ["updated_at", "2015-07-19 20:31:31.545261"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score_f", 8.0], ["updated_at", "2015-07-19 20:31:36.153346"], ["id", 129]]
+  [1m[35m (9.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/show/129
+Completed 302 Found in 4645ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/show/129" for ::1 at 2015-07-19 16:31:36 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"129"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 129]]
+  Rendered home/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 101ms (Views: 99.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/show/129" for ::1 at 2015-07-19 16:36:50 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"129"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 129]]
+  Rendered home/show.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 421ms (Views: 328.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:36:52 -0400
+
+
+Started GET "/" for ::1 at 2015-07-19 16:36:53 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (32.8ms)
+Completed 500 Internal Server Error in 55ms
+
+SyntaxError (/Users/annaershova/Flatiron/Personal-Projects/twitter_analyser-1/twitter-narcissist-app/app/views/home/index.html.erb:4: syntax error, unexpected keyword_end
+   end 
+      ^):
+  app/views/home/index.html.erb:4: syntax error, unexpected keyword_end
+
+
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (107.2ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (27.0ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.7ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (426.2ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (248.3ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.0ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (540.6ms)
+
+
+Started GET "/" for ::1 at 2015-07-19 16:36:57 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 35ms
+
+SyntaxError (/Users/annaershova/Flatiron/Personal-Projects/twitter_analyser-1/twitter-narcissist-app/app/views/home/index.html.erb:4: syntax error, unexpected keyword_end
+   end 
+      ^):
+  app/views/home/index.html.erb:4: syntax error, unexpected keyword_end
+
+
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (55.9ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.2ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (389.8ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.1ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (5.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (303.9ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (10.1ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.5ms)
+  Rendered /Users/annaershova/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (865.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-19 16:37:41 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 599ms (Views: 579.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-6dd856a21841afc2e3d44e0da21073d5fa99547d0111f1faed38bed76149b0e9.css?body=1" for ::1 at 2015-07-19 16:37:42 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-19 16:37:42 -0400
+
+
+Started GET "/assets/narcissism.self-a5df5b3482114d146414fb0bed422e74b27b37eb93466327984d28ad5af753ce.css?body=1" for ::1 at 2015-07-19 16:37:42 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-19 16:37:42 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-19 16:37:42 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-19 16:37:42 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-19 16:37:43 -0400
+
+
+Started GET "/assets/bootstrap.min.self-df683d9eda4692c9329416397eee8fc5a776ee51b75b1aeff27d2ac10a933a0a.js?body=1" for ::1 at 2015-07-19 16:37:43 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-19 16:37:43 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-19 16:37:43 -0400
+
+
+Started GET "/assets/application.self-13305aac38215578429791b624392d011189a7a32560d69a9c370693519ae8d8.js?body=1" for ::1 at 2015-07-19 16:37:43 -0400
+
+
+Started POST "/home/index" for ::1 at 2015-07-19 16:37:50 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tp5zAGj+tbx6RhnFTs6zr15agFbsgyCqtePp5BgoSy56sr5w8YQgNGeP/j2T2CFCNLsMQ1UJNQhp5pr+etv3mA==", "handle"=>" annaershova", "commit"=>" find out "}
+  [1m[35m (2.1ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", " annaershova"], ["created_at", "2015-07-19 20:37:50.408150"], ["updated_at", "2015-07-19 20:37:50.408150"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["score_f", 5.0], ["updated_at", "2015-07-19 20:37:52.786049"], ["id", 130]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/show/130
+Completed 302 Found in 2451ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/show/130" for ::1 at 2015-07-19 16:37:52 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"130"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 130]]
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 214ms (Views: 209.9ms | ActiveRecord: 0.3ms)

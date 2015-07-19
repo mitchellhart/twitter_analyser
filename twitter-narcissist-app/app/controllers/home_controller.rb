@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   end
 
   def handle_valid?
-    handle = @handle.name
+    handle = @handle.name.strip
     if /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(handle) # returns nil or a match
       @handle.save
       @handle.run

@@ -78,8 +78,7 @@ class User < ActiveRecord::Base
     @prescore = (matches.count.to_f / total.to_f)
     @@score = (matches.count.to_f / total.to_f) / 0.04574170332 * 10
   end
-
-
+  
   def run
     current_user.start_parse
     @handle.score_f = @@score.round(1)
