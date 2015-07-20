@@ -7,16 +7,31 @@ class User < ActiveRecord::Base
 # require 'rubygems' -- no need to require rubygem explicitly 
 # require 'twitter'
 
-  
+  NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
+  CELEBS_HASH = {
+      lenaDunham: 10,
+      kanyewest: 9.3,
+      kimkardashian: 8.78,
+      emwatson: 7.55,
+      charlieSheen:  7.08,
+      jeffkatzy: 6.245,
+      oprah: 5.902,
+      aviflombaum: 5.64,
+      realDonaldTrump: 4.079,
+      billgates: 4.153,
+      benedictCumb:  4.103,
+      pontifex:  1.918,
+      dalailama: 1.156
+  }
+
+  @handle = User.last
+  @@score = nil 
+
   def current_user
     @handle = User.last
   end
 
-  @handle = User.last
-  @all_tweets = nil
-
   def start_parse
-    #add narcissistic terms to the array to get  more accurate score
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
       config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
@@ -46,23 +61,22 @@ class User < ActiveRecord::Base
       end
     end
       
+      all_tweets = nil
       @handle = User.last
-      @all_tweets = client.get_all_tweets("#{@handle.name}")
-      parse_tweets(@all_tweets)
+      all_tweets = client.get_all_tweets("#{@handle.name}")
+      parse_tweets(all_tweets)
 
   end #ends start_parse
 
   def parse_tweets(tweets)
     tweet_text = []
-    array = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
     tweets.each { |tweet| tweet_text << tweet.text.split }
-
     match = []
     total = 0
     tweet_text.each do |sentence|
       sentence.each do |word|
         total += 1
-        if array.include?(word)
+        if NARCISSISM_ARRAY.include?(word)
           match << word
         end
       end
@@ -70,8 +84,7 @@ class User < ActiveRecord::Base
     calculate_score(match, total)
   end
   
-  @@score = nil 
-
+  # helper method for parse_tweets
   def calculate_score(matches, total)
     # divide scores by our highest score for a range of 0 - 1, 
     # then multiply by 10 for our 1-10 scoring.
@@ -89,25 +102,8 @@ class User < ActiveRecord::Base
     @handle.save
   end
 
-  @@celebs = {
-
-    lenaDunham: 10,
-    kanyewest: 9.3,
-    kimkardashian: 8.78,
-    emwatson: 7.55,
-    charlieSheen:  7.08,
-    jeffkatzy: 6.245,
-    oprah: 5.902,
-    aviflombaum: 5.64,
-    realDonaldTrump: 4.079,
-    billgates: 4.153,
-    benedictCumb:  4.103,
-    pontifex:  1.918,
-    dalailama: 1.156
-    }
-
   def find_closest_celeb
-    @@celebs.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
+    CELEBS_HASH.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
   end
 
 end
