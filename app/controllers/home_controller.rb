@@ -26,7 +26,7 @@ class HomeController < ApplicationController
   end
 
   def topten   
-    @topten = User.select(:name, :score_f).order(score_f: :desc).limit(10)
+    @topten = User.select(:name, :score_f).order(score_f: :desc).limit(10).uniq(:name)
   end
 
 end
