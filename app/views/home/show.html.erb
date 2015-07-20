@@ -8,30 +8,32 @@
 <% end %>
 
 <!-- informs user of their score --> 
-<%if @handle.score_f = 0 %>
-	<h2>
-    <%= @handle.score_f %> out of 10. Not even a little bit of a narcissist.
+<%if @handle.score_f <= 1 %>
+  <h2>
+    <%= @handle.score_f %> out of 10. You are not even a little bit narcissistic. 
   </h2>
   <h3>
     Maybe you need to use your twitter more often...
   </h3>
+  <br>
+  <h3>Nice work.</h3>
 <%elsif @handle.score_f <= 4 %>
   <h2>
-    <%= @handle.score_f %> out of 10. You are not a narcissist.
+    <%= @handle.score_f %> out of 10. You a little bit narcissistic. 
   </h2>
   <br>
   <h3>Nice work.</h3>
-<%elsif @handle.score_f > 4 && @handle.score_f <= 7 %>
+<%elsif @handle.score_f <= 7 %>
 		<h2>
       <%= @handle.score_f %> out of 10. 
       <br> 
       You are kind of a narcissist. 
     </h2>
-<%elsif @handle.score_f > 7 && @handle.score_f < 10 %>
+<%elsif @handle.score_f <= 10 %>
 		<h2>
       <%= @handle.score_f %> out of 10. 
       <br> 
-      You are absolutely a narcissist.
+      You are absolutely a narcissist. 
     </h2>
     <br> 
 		<h3>Did you even have to ask? </h3>
