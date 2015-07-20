@@ -1,0 +1,10 @@
+	<h1 id="title" >Are you a narcissist?</h1>
+
+	<div class="form">
+
+	<%= form_tag post_path, :class => "form" do  %>
+		<%= text_field_tag :handle, nil, :placeholder => "enter_twitter_handle" %>
+		<%= submit_tag(" find out ") %>
+	<% end %>
+
+	</div>
