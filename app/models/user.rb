@@ -8,6 +8,22 @@ class User < ActiveRecord::Base
 # require 'twitter'
 
   NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
+  CELEBS_HASH = {
+      lenaDunham: 10,
+      kanyewest: 9.3,
+      kimkardashian: 8.78,
+      emwatson: 7.55,
+      charlieSheen:  7.08,
+      jeffkatzy: 6.245,
+      oprah: 5.902,
+      aviflombaum: 5.64,
+      realDonaldTrump: 4.079,
+      billgates: 4.153,
+      benedictCumb:  4.103,
+      pontifex:  1.918,
+      dalailama: 1.156
+  }
+
 
   def current_user
     @handle = User.last
@@ -89,25 +105,9 @@ class User < ActiveRecord::Base
     @handle.save
   end
 
-  @@celebs = {
-
-    lenaDunham: 10,
-    kanyewest: 9.3,
-    kimkardashian: 8.78,
-    emwatson: 7.55,
-    charlieSheen:  7.08,
-    jeffkatzy: 6.245,
-    oprah: 5.902,
-    aviflombaum: 5.64,
-    realDonaldTrump: 4.079,
-    billgates: 4.153,
-    benedictCumb:  4.103,
-    pontifex:  1.918,
-    dalailama: 1.156
-    }
 
   def find_closest_celeb
-    @@celebs.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
+    CELEBS_HASH.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
   end
 
 end
