@@ -25,14 +25,13 @@ class User < ActiveRecord::Base
   }
 
   @handle = User.last
-
+  @@score = nil 
 
   def current_user
     @handle = User.last
   end
 
   def start_parse
-    #add narcissistic terms to the array to get  more accurate score
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
       config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
@@ -72,7 +71,6 @@ class User < ActiveRecord::Base
   def parse_tweets(tweets)
     tweet_text = []
     tweets.each { |tweet| tweet_text << tweet.text.split }
-
     match = []
     total = 0
     tweet_text.each do |sentence|
@@ -86,8 +84,7 @@ class User < ActiveRecord::Base
     calculate_score(match, total)
   end
   
-  @@score = nil 
-
+  # helper method for parse_tweets
   def calculate_score(matches, total)
     # divide scores by our highest score for a range of 0 - 1, 
     # then multiply by 10 for our 1-10 scoring.
@@ -104,7 +101,6 @@ class User < ActiveRecord::Base
     @handle.score_f = @@score.round(1)
     @handle.save
   end
-
 
   def find_closest_celeb
     CELEBS_HASH.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
