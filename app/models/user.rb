@@ -76,7 +76,11 @@ class User < ActiveRecord::Base
     # divide scores by our highest score for a range of 0 - 1, 
     # then multiply by 10 for our 1-10 scoring.
     @prescore = (matches.count.to_f / total.to_f)
-    @@score = (matches.count.to_f / total.to_f) / 0.04574170332 * 10
+    if matches.count.to_f == 0.0 # if there are no tweets
+      @@score = 0 # assign this to be 0 value
+    else
+      @@score = (matches.count.to_f / total.to_f) / 0.04574170332 * 10
+    end
   end
   
   def run
@@ -103,7 +107,7 @@ class User < ActiveRecord::Base
     }
 
   def find_closest_celeb
-    @@celebs.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs } 
+    @@celebs.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
   end
 
 end
