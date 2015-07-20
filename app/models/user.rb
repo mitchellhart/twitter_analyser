@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 # require 'rubygems' -- no need to require rubygem explicitly 
 # require 'twitter'
 
-  
+  NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
+
   def current_user
     @handle = User.last
   end
@@ -54,7 +55,6 @@ class User < ActiveRecord::Base
 
   def parse_tweets(tweets)
     tweet_text = []
-    array = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
     tweets.each { |tweet| tweet_text << tweet.text.split }
 
     match = []
@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
     tweet_text.each do |sentence|
       sentence.each do |word|
         total += 1
-        if array.include?(word)
+        if NARCISSISM_ARRAY.include?(word)
           match << word
         end
       end
