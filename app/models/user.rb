@@ -24,13 +24,12 @@ class User < ActiveRecord::Base
       dalailama: 1.156
   }
 
+  @handle = User.last
+
 
   def current_user
     @handle = User.last
   end
-
-  @handle = User.last
-  @all_tweets = nil
 
   def start_parse
     #add narcissistic terms to the array to get  more accurate score
@@ -63,9 +62,10 @@ class User < ActiveRecord::Base
       end
     end
       
+      all_tweets = nil
       @handle = User.last
-      @all_tweets = client.get_all_tweets("#{@handle.name}")
-      parse_tweets(@all_tweets)
+      all_tweets = client.get_all_tweets("#{@handle.name}")
+      parse_tweets(all_tweets)
 
   end #ends start_parse
 
