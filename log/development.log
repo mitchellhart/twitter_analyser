@@ -7487,3 +7487,252 @@ Started GET "/assets/snap.svg-min.self-8b085627912cfcf834d61fc350068018200cda683
 
 
 Started GET "/assets/application.self-7723b2649916a4a616902c548c4ad093bc495d42a8d533ebed6a218dffb0a1cb.js?body=1" for ::1 at 2015-07-20 23:35:44 -0400
+
+
+Started GET "/show/116" for ::1 at 2015-07-21 09:11:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"116"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 116]]
+  Rendered home/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 489ms (Views: 459.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2015-07-21 09:11:21 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-21 09:11:21 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 89ms (Views: 88.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-21 09:11:26 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5alHyAHmTWOtyzeHDQvRvk1yvj9lUpo42IbG1Z3hrO2re3kc12nrcQ3JAX8MX3pxGHwtWnbV1/fFrvjw4W/qA==", "handle"=>"WorkerBSaunders", "commit"=>" find out "}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "WorkerBSaunders"], ["created_at", "2015-07-21 13:11:26.173336"], ["updated_at", "2015-07-21 13:11:26.173336"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["score_f", 3.8], ["updated_at", "2015-07-21 13:11:26.788388"], ["id", 117]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/show/117
+Completed 302 Found in 632ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/show/117" for ::1 at 2015-07-21 09:11:26 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"117"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 117]]
+  Rendered home/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-21 09:12:07 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5alHyAHmTWOtyzeHDQvRvk1yvj9lUpo42IbG1Z3hrO2re3kc12nrcQ3JAX8MX3pxGHwtWnbV1/fFrvjw4W/qA==", "handle"=>"lskalkos", "commit"=>" find out "}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "lskalkos"], ["created_at", "2015-07-21 13:12:07.873867"], ["updated_at", "2015-07-21 13:12:07.873867"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["score_f", 0.0], ["updated_at", "2015-07-21 13:12:08.280144"], ["id", 118]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/show/118
+Completed 302 Found in 411ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/show/118" for ::1 at 2015-07-21 09:12:08 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"118"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 118]]
+  Rendered home/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/show/118" for ::1 at 2015-07-21 09:13:04 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"118"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 118]]
+  Rendered home/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 62ms (Views: 61.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/narcissism.self-00d4a43ab06d57f7912070452fdfe8f06ba34e270fe26ee1f14f6a8251092f43.css?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/bootstrap.min.self-84e0fb978c9ec887983ea516182bc0e5648e2be4cf9a9404027bda056caf1a3a.css?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/snap.svg-min.self-8b085627912cfcf834d61fc350068018200cda6834476c9ad8f79a1a2b02e9b0.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/application.self-7723b2649916a4a616902c548c4ad093bc495d42a8d533ebed6a218dffb0a1cb.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/bootstrap.min.self-b4af6115b82d3c7af624a9968e15377efe724e1f3bd16455fcc4588e8c473864.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/classie.self-6977e130d2dc21c0fe794d91a94b6a69eaa2d5bc630e4e39e90844c99c4186d0.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/modernizr.custom.self-90225c9b2df96910123d0ac81c260b354a0f3a25ec2e41007e9bf553e9e9012e.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started GET "/assets/overlay.self-cc2cd5310169bbdc5cacdc68f2d860aa64f410543358b2e49a40fecb53f63899.js?body=1" for ::1 at 2015-07-21 09:13:04 -0400
+
+
+Started POST "/home/index" for ::1 at 2015-07-21 09:13:18 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5alHyAHmTWOtyzeHDQvRvk1yvj9lUpo42IbG1Z3hrO2re3kc12nrcQ3JAX8MX3pxGHwtWnbV1/fFrvjw4W/qA==", "handle"=>"lskalkos4352462", "commit"=>" find out "}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "lskalkos4352462"], ["created_at", "2015-07-21 13:13:18.849180"], ["updated_at", "2015-07-21 13:13:18.849180"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+Completed 500 Internal Server Error in 359ms
+
+Twitter::Error::NotFound (Sorry, that page does not exist.):
+  app/models/user.rb:53:in `block in get_all_tweets'
+  app/models/user.rb:50:in `get_all_tweets'
+  app/models/user.rb:66:in `start_parse'
+  app/models/user.rb:100:in `run'
+  app/controllers/home_controller.rb:16:in `handle_valid?'
+  app/controllers/home_controller.rb:9:in `new'
+
+
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.1ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.6ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mitchellhart/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (118.5ms)
+
+
+Started GET "/topten" for ::1 at 2015-07-21 09:13:59 -0400
+Processing by HomeController#topten as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  DISTINCT "users"."name", "users"."score_f" FROM "users"  ORDER BY "users"."score_f" DESC LIMIT 10
+  Rendered home/topten.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/snap.svg-min.self-8b085627912cfcf834d61fc350068018200cda6834476c9ad8f79a1a2b02e9b0.js?body=1" for ::1 at 2015-07-21 09:13:59 -0400
+
+
+Started GET "/assets/application.self-7723b2649916a4a616902c548c4ad093bc495d42a8d533ebed6a218dffb0a1cb.js?body=1" for ::1 at 2015-07-21 09:13:59 -0400
+
+
+Started GET "/topten" for ::1 at 2015-07-21 09:13:59 -0400
+Processing by HomeController#topten as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  DISTINCT "users"."name", "users"."score_f" FROM "users"  ORDER BY "users"."score_f" DESC LIMIT 10[0m
+  Rendered home/topten.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 96ms (Views: 94.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/home/index" for ::1 at 2015-07-21 09:14:42 -0400
+Processing by HomeController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5alHyAHmTWOtyzeHDQvRvk1yvj9lUpo42IbG1Z3hrO2re3kc12nrcQ3JAX8MX3pxGHwtWnbV1/fFrvjw4W/qA==", "handle"=>"kingjames", "commit"=>" find out "}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "kingjames"], ["created_at", "2015-07-21 13:14:42.746192"], ["updated_at", "2015-07-21 13:14:42.746192"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "score_f" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["score_f", 8.4], ["updated_at", "2015-07-21 13:14:55.391252"], ["id", 120]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/show/120
+Completed 302 Found in 12650ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/show/120" for ::1 at 2015-07-21 09:14:55 -0400
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"120"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 120]]
+  Rendered home/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/topten" for ::1 at 2015-07-21 09:15:08 -0400
+Processing by HomeController#topten as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  DISTINCT "users"."name", "users"."score_f" FROM "users"  ORDER BY "users"."score_f" DESC LIMIT 10[0m
+  Rendered home/topten.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.self-84e0fb978c9ec887983ea516182bc0e5648e2be4cf9a9404027bda056caf1a3a.css?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/narcissism.self-00d4a43ab06d57f7912070452fdfe8f06ba34e270fe26ee1f14f6a8251092f43.css?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/application.self-8afdbb65abc930f2108b1a17dc10dda4db6e939bd28fc954d14e8245f1b09e6b.css?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/app.self-5b0edca3338b966a92d623f9b9d1f17e4413ff1047ace9277f08b16d210e70fe.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/bootstrap.min.self-b4af6115b82d3c7af624a9968e15377efe724e1f3bd16455fcc4588e8c473864.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/classie.self-6977e130d2dc21c0fe794d91a94b6a69eaa2d5bc630e4e39e90844c99c4186d0.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/modernizr.custom.self-90225c9b2df96910123d0ac81c260b354a0f3a25ec2e41007e9bf553e9e9012e.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/overlay.self-cc2cd5310169bbdc5cacdc68f2d860aa64f410543358b2e49a40fecb53f63899.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/snap.svg-min.self-8b085627912cfcf834d61fc350068018200cda6834476c9ad8f79a1a2b02e9b0.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
+
+
+Started GET "/assets/application.self-7723b2649916a4a616902c548c4ad093bc495d42a8d533ebed6a218dffb0a1cb.js?body=1" for ::1 at 2015-07-21 09:15:08 -0400
