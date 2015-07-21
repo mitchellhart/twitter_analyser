@@ -16,5 +16,8 @@
 //= require_tree .
 //= require app.js
 //= require bootstrap.min.js
+//= require overlay.js
+//= require modernizr.custom.js
+//= require classie.js
 
 
