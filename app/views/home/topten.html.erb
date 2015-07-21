@@ -1,5 +1,5 @@
-
+<h2><u>10 most narcissistic tweeters</u></h2>
 
 <% @topten.each_with_index do |handle, idx| %>
-<h2> <%= idx+1 %>: <%= handle.name %></h2>
+<h3> <b><%=idx+1%>:</b> <a href="http://twitter.com/<%=handle.name%>" target="_blank">@<%=handle.name%></a> <b>score:</b> <%= handle.score_f %> </h3>
 <%end %>

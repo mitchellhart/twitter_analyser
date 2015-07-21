@@ -1,5 +1,7 @@
-<br><br><br>
-
+<div class="overlay overlay-hugeinc"> 
+Overlay testing
+<button type="button" class="overlay-close"></button>
+</div>
 <!-- greets user with appropriate handle name --> 
 <% if @handle.name.include?("@") %>
   <h3>Hi, <%= @handle.name.downcase %>!</h3>
@@ -8,6 +10,7 @@
 <% end %>
 
 <!-- informs user of their score --> 
+<div class="colored">
 <%if @handle.score_f <= 1 %>
   <h2>
     <%= @handle.score_f %> out of 10. You are not even a little bit narcissistic. 
@@ -16,7 +19,7 @@
     Or maybe you need to tweet more often...
   </h3>
   <br>
-  <h3>Nice work.</h3>
+
 <%elsif @handle.score_f <= 4 %>
   <h2>
     <%= @handle.score_f %> out of 10. You a little bit narcissistic. 
@@ -29,74 +32,87 @@
       <br> 
       You are kind of a narcissist. 
     </h2>
+    <h4> Nothing to see here. </h4>
+    <br>
 <%elsif @handle.score_f <= 10 %>
-		<h2>
-      <%= @handle.score_f %> out of 10. 
-      <br> 
-      You are absolutely a narcissist. 
-    </h2>
+        <h2>
+          <%= @handle.score_f %> out of 10. 
+          <br> 
+          You are absolutely a narcissist. 
+        </h2>
+        <h4>Did you even have to ask? </h4>
     <br> 
-		<h3>Did you even have to ask? </h3>
+</div>		
 <%else%>
-		<h3>You're literally off our charts. What. The. Fuck. </h3>
+		<h2>You're literally off our charts. I pray 4 U. </h2>
 <%end%>
 <br>
 
 <!-- informs user of their celebrity match --> 
-<h3> 
-  Your closest celebrity match is: 
-  <br> 
-  <a href="http://www.twitter.com/<%= @celeb[0]%>" target="_blank"> @<%= @celeb[0]%></a>
-</h3>
-
-<!-- adds a photo of celebrity the user has matched with, in 200x200 format--> 
-<!-- I would normally do this as a hash match between key and value, but I could not find an easily manipulable twitter profile image url, so we have to hardcode it -->
-<p> 
-  <% if @celeb[0].downcase.downcase == :lenadunham %>
-    <img src="https://pbs.twimg.com/profile_images/603921768072503296/roLotv2U_200x200.jpg" alt="Lena Dunham">
-  <% elsif @celeb[0].downcase == :kanyewest %>
-    <img src="https://pbs.twimg.com/profile_images/585565077207678977/N_eNSBXi_200x200.jpg" alt="No One Likes Kanye West More than Kanye West Loves Kanye West">
-  <% elsif @celeb[0].downcase == :kimkardashian %>
-    <img src="https://pbs.twimg.com/profile_images/597101079474483200/HAEB5BuD_200x200.jpg" alt="Kim Kardashian">
-  <% elsif @celeb[0].downcase == :emwatson %>
-    <img src="https://pbs.twimg.com/profile_images/514108659660759040/PwcLTe3q_200x200.jpeg" alt="Emma Watson">
-  <% elsif @celeb[0].downcase == :charliesheen %>  
-    <img src="https://pbs.twimg.com/profile_images/420259567524519936/sHTDLeQQ_200x200.jpeg" alt="Charlie Sheen">
-  <!-- Jeff is an egg user, meaning he has no profile picture of his own yet; instead, a Twitter 'egg' shows up-->
-  <% elsif @celeb[0].downcase == :jeffkatzy %>  
-    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_0_200x200.png" alt="Jeff Katz">
-    <h4>Jeff may be narcissistic, but he did not bother to put up a profile picture...</h4>
-  <% elsif @celeb[0].downcase == :oprah %> 
-    <img src="https://pbs.twimg.com/profile_images/517424562279944192/HPYrGBlP_200x200.jpeg" alt="Oprah">
-  <% elsif @celeb[0].downcase == :aviflombaum %>   
-    <img src="https://pbs.twimg.com/profile_images/464511280833785856/oVjSmCu9_200x200.jpeg" alt="Avi Flombaum">
-  <% elsif @celeb[0].downcase == :realdonaldtrump %>
-    <img src="https://pbs.twimg.com/profile_images/1980294624/DJT_Headshot_V2_200x200.jpg" alt="The Donald">
-  <% elsif @celeb[0].downcase == :billgates %> 
-    <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi_200x200.jpeg" alt="Bill Gates">
-  <% elsif @celeb[0].downcase == :benedictcumb %>
-    <img src="https://pbs.twimg.com/profile_images/378800000585651017/9c3cb98d9e75d4c99c86d1b2f18a3674_200x200.jpeg" alt="Benedict Cumberbatch">
-  <% elsif @celeb[0].downcase == :pontifex %>
-    <img src="https://pbs.twimg.com/profile_images/507818066814590976/KNG-IkT9_200x200.jpeg" alt="Pope Francis"> 
-  <% elsif @celeb[0].downcase == :dalailama %>     
-    <img src="https://pbs.twimg.com/profile_images/529214699041067008/fqPBAr5s_200x200.jpeg" alt="Dalai Lama">  -->
-  <% else %>
-    <!-- I feel like we need some sort of 'something went wrong here' just in case - maybe some funny cat picture? -->
-  <% end %>
-</p>
+<div class="row">
+<div class="col-md-2"></div>
+  <div class="col-md-5">
+    <h3 style="text-align: right;"> 
+      Your closest celebrity match is: 
+      <br> 
+      <a href="http://www.twitter.com/<%= @celeb[0]%>" target="_blank"> @<%= @celeb[0]%></a>
+    </h3>
+  </div>
+    <!-- adds a photo of celebrity the user has matched with, in 200x200 format--> 
+    <!-- I would normally do this as a hash match between key and value, but I could not find an easily manipulable twitter profile image url, so we have to hardcode it -->
+   <div class="col-md-2">
+      <% if @celeb[0].downcase.downcase == :lenadunham %>
+        <img src="https://pbs.twimg.com/profile_images/603921768072503296/roLotv2U_200x200.jpg" alt="Lena Dunham" class="img-circle">
+      <% elsif @celeb[0].downcase == :kanyewest %>
+        <img src="https://pbs.twimg.com/profile_images/585565077207678977/N_eNSBXi_200x200.jpg" alt="No One Likes Kanye West More than Kanye West Loves Kanye West" class="img-circle">
+      <% elsif @celeb[0].downcase == :kimkardashian %>
+        <img src="https://pbs.twimg.com/profile_images/597101079474483200/HAEB5BuD_200x200.jpg" alt="Kim Kardashian" class="img-circle">
+      <% elsif @celeb[0].downcase == :emwatson %>
+        <img src="https://pbs.twimg.com/profile_images/514108659660759040/PwcLTe3q_200x200.jpeg" alt="Emma Watson" class="img-circle">
+      <% elsif @celeb[0].downcase == :charliesheen %>  
+        <img src="https://pbs.twimg.com/profile_images/420259567524519936/sHTDLeQQ_200x200.jpeg" alt="Charlie Sheen" class="img-circle">
+      <!-- Jeff is an egg user, meaning he has no profile picture of his own yet; instead, a Twitter 'egg' shows up-->
+      <% elsif @celeb[0].downcase == :jeffkatzy %>  
+        <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_0_200x200.png" alt="Jeff Katz" class="img-circle">
+        <h4>Jeff may be narcissistic, but he did not bother to put up a profile picture...</h4>
+      <% elsif @celeb[0].downcase == :oprah %> 
+        <img src="https://pbs.twimg.com/profile_images/517424562279944192/HPYrGBlP_200x200.jpeg" alt="Oprah class="img-circle"">
+      <% elsif @celeb[0].downcase == :aviflombaum %>   
+        <img src="https://pbs.twimg.com/profile_images/464511280833785856/oVjSmCu9_200x200.jpeg" alt="Avi Flombaum" class="img-circle">
+      <% elsif @celeb[0].downcase == :realdonaldtrump %>
+        <img src="https://pbs.twimg.com/profile_images/1980294624/DJT_Headshot_V2_200x200.jpg" alt="The Donald" class="img-circle">
+      <% elsif @celeb[0].downcase == :billgates %> 
+        <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi_200x200.jpeg" alt="Bill Gates" class="img-circle">
+      <% elsif @celeb[0].downcase == :benedictcumb %>
+        <img src="https://pbs.twimg.com/profile_images/378800000585651017/9c3cb98d9e75d4c99c86d1b2f18a3674_200x200.jpeg" alt="Benedict Cumberbatch" class="img-circle">
+      <% elsif @celeb[0].downcase == :pontifex %>
+        <img src="https://pbs.twimg.com/profile_images/507818066814590976/KNG-IkT9_200x200.jpeg" alt="Pope Francis" class="img-circle"> 
+      <% elsif @celeb[0].downcase == :dalailama %>     
+        <img src="https://pbs.twimg.com/profile_images/529214699041067008/fqPBAr5s_200x200.jpeg" alt="Dalai Lama" class="img-circle">  -->
+      <% else %>
+        <!-- I feel like we need some sort of 'something went wrong here' just in case - maybe some funny cat picture? -->
+      <% end %>
+    
+    </div>
+</div>
+<br>
 <br>
 
 <!-- buttons for trying another handle or for sharing on social media -->
-<button type="button" class="btn btn-lg btn-danger">
-  <a href="/">Try Another?</a>
-</button>
 
-<button type="button" class="btn btn-lg btn-primary">
-  <a href="#">Share</a>
-</button>
+    <button type="button" class="btn btn-lg btn-danger">
+      <a href="/">Try Another?</a>
+    </button>
+  
+    <button type="button" class="btn btn-lg btn-default">
+      <a href="#">Share</a>
+    </button>
 
-<!-- 
-<br>
-<div id="top-right">
-<button type="button" class="btn btn-lg" data-toggle="popover" title="Alert!" data-placement="right" data-content="Score for entertainment purposes only.">?</button>
-</div> -->
+    <button type="button" class="btn btn-lg btn-default">
+      <a href="/topten">Top Ten</a>
+    </button>
+
+  <!-- <button id="trigger-overlay" type="button">Open Overlay</button></p> -->
+   
+
+<br><br><br><br>
