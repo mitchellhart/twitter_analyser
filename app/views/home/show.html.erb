@@ -1,4 +1,5 @@
 <div class="overlay overlay-hugeinc"> 
+Overlay testing
 <button type="button" class="overlay-close"></button>
 </div>
 <!-- greets user with appropriate handle name --> 
@@ -9,7 +10,7 @@
 <% end %>
 
 <!-- informs user of their score --> 
-
+<div class="colored">
 <%if @handle.score_f <= 1 %>
   <h2>
     <%= @handle.score_f %> out of 10. You are not even a little bit narcissistic. 
@@ -31,17 +32,17 @@
       <br> 
       You are kind of a narcissist. 
     </h2>
+    <h4> Nothing to see here. </h4>
+    <br>
 <%elsif @handle.score_f <= 10 %>
-		  <div class="colored">
         <h2>
           <%= @handle.score_f %> out of 10. 
           <br> 
           You are absolutely a narcissist. 
         </h2>
         <h4>Did you even have to ask? </h4>
-      </div>
     <br> 
-		
+</div>		
 <%else%>
 		<h2>You're literally off our charts. I pray 4 U. </h2>
 <%end%>
@@ -111,7 +112,7 @@
       <a href="/topten">Top Ten</a>
     </button>
 
-<!--   <button id="trigger-overlay" type="button">Open Overlay</button></p> -->
+  <!-- <button id="trigger-overlay" type="button">Open Overlay</button></p> -->
    
 
 <br><br><br><br>

@@ -1,7 +1,6 @@
 *{
 	font-family: 'Open Sans', san-serif;
 }
-
 #title{
 	opacity: 0;
 	top: -50;
@@ -22,7 +21,7 @@ a:visited {
 }
 
 body { 
-	padding-top: 60px; 
+	padding-top: 40px; 
  	background: #212121;
  	text-align: center;
 }
@@ -42,7 +41,6 @@ h2 {
 .colored{
 	background: #262626;
 	height: 245px;
-
 }
 
 h3 {
