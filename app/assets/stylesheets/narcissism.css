@@ -40,7 +40,9 @@ h2 {
 }
 
 .colored{
-	background: #2f2f2f;
+	background: #262626;
+	height: 245px;
+
 }
 
 h3 {
@@ -49,7 +51,14 @@ h3 {
   font-family: "Open Sans";
   font-weight: 300;
   font-style: italic;
+}
 
+h4 {
+  font-size: 20px;
+  margin: 0;
+  color: #e6e6e6;
+  font-family: "Open Sans";
+  font-weight: 300;
 }
 
 input {
@@ -76,6 +85,5 @@ label {
 }
 
 input[type=submit] {
-    background-color: #212121;    
-    
+    background-color: #212121;
 }
