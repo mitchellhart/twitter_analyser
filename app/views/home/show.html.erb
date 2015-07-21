@@ -1,4 +1,6 @@
-
+<div class="overlay overlay-hugeinc"> 
+<button type="button" class="overlay-close"></button>
+</div>
 <!-- greets user with appropriate handle name --> 
 <% if @handle.name.include?("@") %>
   <h3>Hi, <%= @handle.name.downcase %>!</h3>
@@ -109,6 +111,7 @@
       <a href="/topten">Top Ten</a>
     </button>
 
+<!--   <button id="trigger-overlay" type="button">Open Overlay</button></p> -->
    
 
 <br><br><br><br>
