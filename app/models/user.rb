@@ -1,13 +1,7 @@
 class User < ActiveRecord::Base
 
-  # score_i => integer score
-  # score_f => float score
-  #has_one :handle
-  #validates_presence_of :handle, :message => "Please enter a Twitter Handle."
-# require 'rubygems' -- no need to require rubygem explicitly 
-# require 'twitter'
-
   NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
+
   CELEBS_HASH = {
       lenaDunham: 10,
       kanyewest: 9.3,
@@ -27,16 +21,12 @@ class User < ActiveRecord::Base
   @handle = User.last
   @@score = nil 
 
-  def current_user
-    @handle = User.last
-  end
-
   def start_parse
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
-      config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
-      config.access_token        = "18218718-2GXaJ9HQ8xhdqZbcilCAXXQexuVcdrfMFjA8O8xyQ"
-      config.access_token_secret = "fS0NBEqzFLYLvxuFRkxcMjMQlA0gS1Dzq0t36zmCGYaij"
+        config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
+        config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
+        config.access_token        = "18218718-2GXaJ9HQ8xhdqZbcilCAXXQexuVcdrfMFjA8O8xyQ"
+        config.access_token_secret = "fS0NBEqzFLYLvxuFRkxcMjMQlA0gS1Dzq0t36zmCGYaij"
     end
 
     def collect_with_max_id(collection=[], max_id=nil, &block)
@@ -50,7 +40,7 @@ class User < ActiveRecord::Base
         collect_with_max_id do |max_id|
           options = {count: 200, include_rts: true}
           options[:max_id] = max_id unless max_id.nil?
-          user_timeline(user, options)
+          user_timeline(user, options) # shows an array list of tweet objects
         end
         
         rescue Twitter::Error::TooManyRequests => error
@@ -61,7 +51,6 @@ class User < ActiveRecord::Base
       end
     end
       
-      all_tweets = nil
       @handle = User.last
       all_tweets = client.get_all_tweets("#{@handle.name}")
       parse_tweets(all_tweets)
@@ -92,12 +81,13 @@ class User < ActiveRecord::Base
     if matches.count.to_f == 0.0 # if there are no tweets
       @@score = 0 # assign this to be 0 value
     else
-      @@score = (matches.count.to_f / total.to_f) / 0.04574170332 * 10
+      @@score = (matches.count.to_f / total.to_f) / 0.004574170332
     end
   end
   
   def run
-    current_user.start_parse
+    @handle = User.last
+    @handle.start_parse
     @handle.score_f = @@score.round(1)
     @handle.save
   end

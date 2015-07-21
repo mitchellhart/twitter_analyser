@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 
   def handle_valid?
     handle = @handle.name.strip
-    if /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(handle) # returns nil or a match
+    if /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(handle).to_s == handle# returns nil or a match
       @handle.save
       @handle.run
       redirect_to "/show/#{@handle.id}"
