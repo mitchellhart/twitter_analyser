@@ -1,11 +1,7 @@
 class User < ActiveRecord::Base
 
-  # score_i => integer score
-  # score_f => float score
-  #has_one :handle
-  #validates_presence_of :handle, :message => "Please enter a Twitter Handle."
-# require 'rubygems' -- no need to require rubygem explicitly 
-# require 'twitter'
+#has_one :handle
+#validates_presence_of :handle, :message => "Please enter a Twitter Handle."
 
   NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
   CELEBS_HASH = {
@@ -33,10 +29,10 @@ class User < ActiveRecord::Base
 
   def start_parse
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
-      config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
-      config.access_token        = "18218718-2GXaJ9HQ8xhdqZbcilCAXXQexuVcdrfMFjA8O8xyQ"
-      config.access_token_secret = "fS0NBEqzFLYLvxuFRkxcMjMQlA0gS1Dzq0t36zmCGYaij"
+      config.consumer_key        = "deactivated"
+      config.consumer_secret     = "deactivated"
+      config.access_token        = "deactivated"
+      config.access_token_secret = "deactivated"
     end
 
     def collect_with_max_id(collection=[], max_id=nil, &block)
