@@ -43,11 +43,8 @@ class User < ActiveRecord::Base
           options[:max_id] = max_id unless max_id.nil?
           user_timeline(user, options) # shows an array list of tweet objects
         end
-        
       rescue Twitter::Error::TooManyRequests => error
-          # NOTE: Your process could go to sleep for up to 15 minutes but if you
-          # retry any sooner, it will almost certainly fail with the same exception.
-      sleep error.rate_limit.reset_in + 1
+        sleep error.rate_limit.reset_in + 1
       retry
       end # end begin
     end # end get_all_tweets

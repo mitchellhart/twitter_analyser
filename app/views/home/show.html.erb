@@ -1,11 +1,12 @@
 <div class="overlay overlay-hugeinc"> 
-Overlay testing
-<button type="button" class="overlay-close"></button>
+  Overlay testing
+  <button type="button" class="overlay-close"></button>
 </div>
-<!-- greets user with appropriate handle name --> 
+
+<!-- greets user with an appropriate handle name --> 
 <% if @handle.name.include?("@") %>
   <h3>Hi, <%= @handle.name.downcase %>!</h3>
-  <% else %>
+<% else %>
   <h3>Hi, @<%= @handle.name.downcase %>!</h3>
 <% end %>
 
@@ -59,7 +60,6 @@ Overlay testing
     </h3>
   </div>
     <!-- adds a photo of celebrity the user has matched with, in 200x200 format--> 
-    <!-- I would normally do this as a hash match between key and value, but I could not find an easily manipulable twitter profile image url, so we have to hardcode it -->
    <div class="col-md-2">
       <% if @celeb[0].downcase.downcase == :lenadunham %>
         <img src="https://pbs.twimg.com/profile_images/603921768072503296/roLotv2U_200x200.jpg" alt="Lena Dunham" class="img-circle">
@@ -87,12 +87,9 @@ Overlay testing
         <img src="https://pbs.twimg.com/profile_images/378800000585651017/9c3cb98d9e75d4c99c86d1b2f18a3674_200x200.jpeg" alt="Benedict Cumberbatch" class="img-circle">
       <% elsif @celeb[0].downcase == :pontifex %>
         <img src="https://pbs.twimg.com/profile_images/507818066814590976/KNG-IkT9_200x200.jpeg" alt="Pope Francis" class="img-circle"> 
-      <% elsif @celeb[0].downcase == :dalailama %>     
+      <% else @celeb[0].downcase == :dalailama %>     
         <img src="https://pbs.twimg.com/profile_images/529214699041067008/fqPBAr5s_200x200.jpeg" alt="Dalai Lama" class="img-circle">  -->
-      <% else %>
-        <!-- I feel like we need some sort of 'something went wrong here' just in case - maybe some funny cat picture? -->
       <% end %>
-    
     </div>
 </div>
 <br>

@@ -1,5 +1,10 @@
-<h2><u>10 most narcissistic tweeters</u></h2>
+<h2><u>10 most narcissistic users of this app so far:</u></h2>
 
 <% @topten.each_with_index do |handle, idx| %>
-<h3> <b><%=idx+1%>:</b> <a href="http://twitter.com/<%=handle.name%>" target="_blank">@<%=handle.name%></a> <b>score:</b> <%= handle.score_f %> </h3>
+  <h3> 
+    <b><%=idx+1%>:</b> 
+      <a href="http://twitter.com/<%=handle.name%>" target="_blank">@<%=handle.name%></a> 
+    <b>score:</b> 
+      <%= handle.score_f %> 
+  </h3>
 <%end %>
