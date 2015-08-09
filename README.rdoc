@@ -1,28 +1,5 @@
-== README
+How narcissistic are you? This app will tell you exactly that. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We use our own custom language-recognition algorithm to analyze your (or anyone else's) Twitter account to rate you on a narcissism scale, from Dalai Lama all the way to Kim Kardashian and Kanye West.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Created by Anna Ershova and Mitchell Hart at the Flatiron School, 2015.
