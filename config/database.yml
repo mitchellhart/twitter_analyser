@@ -19,3 +19,10 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+API Key: "6ARIwHcW5efqKeCC2Bm3O9EH9"
+Consumer Secret: "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
+
+Access Token: "18218718-KaJVg8ZKslupaPXqFI4y2kI7xaiUqlydFQaZQnGic"
+Access Token Secret: "8yFpmnI3qPTvrKSkRcG0A13veWgCFZMedleQGWFjCTm57"
+

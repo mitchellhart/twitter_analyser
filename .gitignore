@@ -1,6 +1,7 @@
 *.sqlite3
 *.log  
 *.pid
+*.cache
 tmp/
 
 
