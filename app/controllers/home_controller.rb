@@ -1,8 +1,5 @@
 class HomeController < ApplicationController
 
-  def index
-  end
-
   def new
     @handle = User.new
     @handle.name = params[:handle]
@@ -16,7 +13,9 @@ class HomeController < ApplicationController
       @handle.run
       redirect_to "/show/#{@handle.id}"
     else 
-      redirect_to root_path
+      # @handle = User.new
+      render :index
+      # should be render
     end
   end
 
@@ -24,6 +23,8 @@ class HomeController < ApplicationController
     @handle = User.find(params[:id])
     @celeb = @handle.find_closest_celeb
   end
+
+
 
   def topten   
     @topten = User.select(:name, :score_f).order(score_f: :desc).limit(10).uniq(:name)

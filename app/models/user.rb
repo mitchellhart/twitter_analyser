@@ -22,11 +22,12 @@ class User < ActiveRecord::Base
   @@score = nil 
 
   def start_parse
+
     client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = "6ARIwHcW5efqKeCC2Bm3O9EH9"
-        config.consumer_secret     = "cXSog0qnbtEqsgmV7a4bYX9uKoTetDU7TvinPY7737TNXKqmv6"
-        config.access_token        = "18218718-2GXaJ9HQ8xhdqZbcilCAXXQexuVcdrfMFjA8O8xyQ"
-        config.access_token_secret = "fS0NBEqzFLYLvxuFRkxcMjMQlA0gS1Dzq0t36zmCGYaij"
+        config.consumer_key        = ENV["twitter_api_key"]
+        config.consumer_secret     = ENV["twitter_key_secret"]
+        config.access_token        = ENV["twitter_access_token"]
+        config.access_token_secret = ENV["twitter_access_token_secret"]
     end
 
     def collect_with_max_id(collection=[], max_id=nil, &block)
@@ -43,13 +44,13 @@ class User < ActiveRecord::Base
           user_timeline(user, options) # shows an array list of tweet objects
         end
         
-        rescue Twitter::Error::TooManyRequests => error
+      rescue Twitter::Error::TooManyRequests => error
           # NOTE: Your process could go to sleep for up to 15 minutes but if you
           # retry any sooner, it will almost certainly fail with the same exception.
-        sleep error.rate_limit.reset_in + 1
-        retry
-      end
-    end
+      sleep error.rate_limit.reset_in + 1
+      retry
+      end # end begin
+    end # end get_all_tweets
       
       @handle = User.last
       all_tweets = client.get_all_tweets("#{@handle.name}")
@@ -95,5 +96,6 @@ class User < ActiveRecord::Base
   def find_closest_celeb
     CELEBS_HASH.min_by { |celeb_handle, score| (score.to_f - self.score_f).abs }
   end
+
 
 end
