@@ -1,6 +1,8 @@
 *.sqlite3
 *.log  
 *.pid
+tmp/
+
 
 # Ignore application configuration
 /config/application.yml

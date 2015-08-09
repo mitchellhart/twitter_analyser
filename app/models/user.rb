@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
 
+<<<<<<< HEAD
+=======
+#has_one :handle
+#validates_presence_of :handle, :message => "Please enter a Twitter Handle."
+
+>>>>>>> 0b1835ffecd6533aa3e8d887c7bf3c5163341d6e
   NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
 
   CELEBS_HASH = {
@@ -24,10 +30,17 @@ class User < ActiveRecord::Base
   def start_parse
 
     client = Twitter::REST::Client.new do |config|
+<<<<<<< HEAD
         config.consumer_key        = ENV["twitter_api_key"]
         config.consumer_secret     = ENV["twitter_key_secret"]
         config.access_token        = ENV["twitter_access_token"]
         config.access_token_secret = ENV["twitter_access_token_secret"]
+=======
+      config.consumer_key        = "deactivated"
+      config.consumer_secret     = "deactivated"
+      config.access_token        = "deactivated"
+      config.access_token_secret = "deactivated"
+>>>>>>> 0b1835ffecd6533aa3e8d887c7bf3c5163341d6e
     end
 
     def collect_with_max_id(collection=[], max_id=nil, &block)
