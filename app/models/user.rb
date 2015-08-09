@@ -1,11 +1,5 @@
 class User < ActiveRecord::Base
 
-<<<<<<< HEAD
-=======
-#has_one :handle
-#validates_presence_of :handle, :message => "Please enter a Twitter Handle."
-
->>>>>>> 0b1835ffecd6533aa3e8d887c7bf3c5163341d6e
   NARCISSISM_ARRAY = ["i", "I", "me", "Me", "my", "My", "myself", "Myself", "I'm", "i'm", "mine", "Mine"]
 
   CELEBS_HASH = {
