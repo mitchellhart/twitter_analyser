@@ -3,3 +3,5 @@ How narcissistic are you? This app will tell you exactly that.
 We use our own custom language-recognition algorithm to analyze your (or anyone else's) Twitter account to rate you on a narcissism scale, from Dalai Lama all the way to Kim Kardashian and Kanye West.
 
 Created by Anna Ershova and Mitchell Hart at the Flatiron School, 2015.
+
+https://twitternarcissist.herokuapp.com/
