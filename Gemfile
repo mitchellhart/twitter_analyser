@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
-
+ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# replaces sqlite3 with pg for deploying on Heroky
-gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +34,12 @@ gem 'figaro'
 
 # core API technology this app employs
 gem "twitter"
+
+group :production do 
+# replaces sqlite3 with pg for deploying on Heroku
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
