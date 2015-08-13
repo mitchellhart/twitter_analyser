@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomesController < ApplicationController
 
   def new
     @handle = User.new
@@ -23,8 +23,6 @@ class HomeController < ApplicationController
     @handle = User.find(params[:id])
     @celeb = @handle.find_closest_celeb
   end
-
-
 
   def topten   
     @topten = User.select(:name, :score_f).order(score_f: :desc).limit(10).uniq(:name)
