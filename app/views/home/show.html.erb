@@ -1,8 +1,3 @@
-<div class="overlay overlay-hugeinc"> 
-  Overlay testing
-  <button type="button" class="overlay-close"></button>
-</div>
-
 <!-- greets user with an appropriate handle name --> 
 <% if @handle.name.include?("@") %>
   <h3>Hi, <%= @handle.name.downcase %>!</h3>
@@ -62,7 +57,7 @@
     <!-- adds a photo of celebrity the user has matched with, in 200x200 format--> 
    <div class="col-md-2">
       <% if @celeb[0].downcase.downcase == :lenadunham %>
-        <img src="https://pbs.twimg.com/profile_images/603921768072503296/roLotv2U_200x200.jpg" alt="Lena Dunham" class="img-circle">
+        <img src="http://rs977.pbsrc.com/albums/ae257/jasminezenetti/Lena%20Dunham/lena-dunhamhollywoodactressbyunomatch05_zps9b450466.jpg~c200" alt="Lena Dunham" class="img-circle">
       <% elsif @celeb[0].downcase == :kanyewest %>
         <img src="https://pbs.twimg.com/profile_images/585565077207678977/N_eNSBXi_200x200.jpg" alt="No One Likes Kanye West More than Kanye West Loves Kanye West" class="img-circle">
       <% elsif @celeb[0].downcase == :kimkardashian %>
@@ -100,14 +95,14 @@
     <button type="button" class="btn btn-lg btn-danger">
       <a href="/">Try Another?</a>
     </button>
-  
-    <button type="button" class="btn btn-lg btn-default">
-      <a href="#">Share</a>
-    </button>
 
     <button type="button" class="btn btn-lg btn-default">
       <a href="/topten">Top Ten</a>
-    </button>
+    </button> 
+
+    <br><br>
+
+    <%= social_share_button_tag("I scored a " + @handle.score_f.to_s + " out of 10 on the narcissism scale.", :url => "http://amianarcissist.herokuapp.com") %>
 
   <!-- <button id="trigger-overlay" type="button">Open Overlay</button></p> -->
    

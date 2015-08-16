@@ -14,6 +14,7 @@
  *= require_self
  *= require 'narcissism'
  *= require bootstrap.min.css
+ *= require social-share-button
  */
 
  
