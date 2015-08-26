@@ -17,6 +17,6 @@
 //= require app.js
 //= require bootstrap.min.js
 //= require modernizr.custom.js
-#= require social-share-button
+//= require social-share-button
 
 
