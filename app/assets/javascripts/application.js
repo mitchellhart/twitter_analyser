@@ -13,10 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require app.js
 //= require bootstrap.min.js
 //= require modernizr.custom.js
 //= require social-share-button
+//= require classie.js
+//= require demo1.js
 
+
+//= require_tree .
 

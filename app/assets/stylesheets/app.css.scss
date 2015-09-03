@@ -18,3 +18,35 @@
     min-width: 100%;
 
 }
+
+
+.overlay-hugeinc {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-hugeinc.open {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.5s;
+}
+
+.overlay-hugeinc nav {
+	perspective: 1200px;
+}
+
+.overlay-hugeinc nav ul {
+	opacity: 0.4;
+	transform: translateY(-25%) rotateX(35deg);
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-hugeinc.open nav ul {
+	opacity: 1;
+	transform: rotateX(0deg);
+}
+
+.overlay-hugeinc.close nav ul {
+	transform: translateY(25%) rotateX(-35deg);
+}
