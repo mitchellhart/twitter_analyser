@@ -1,4 +1,3 @@
-<!-- greets user with an appropriate handle name --> 
 <% if @handle.name.include?("@") %>
   <h3>Hi, <%= @handle.name.downcase %>!</h3>
 <% else %>
@@ -54,37 +53,10 @@
       <a href="http://www.twitter.com/<%= @celeb[0]%>" target="_blank"> @<%= @celeb[0]%></a>
     </h3>
   </div>
-    <!-- adds a photo of celebrity the user has matched with, in 200x200 format--> 
-   <div class="col-md-2">
-      <% if @celeb[0].downcase.downcase == :lenadunham %>
-        <img src="http://rs977.pbsrc.com/albums/ae257/jasminezenetti/Lena%20Dunham/lena-dunhamhollywoodactressbyunomatch05_zps9b450466.jpg~c200" alt="Lena Dunham" class="img-circle">
-      <% elsif @celeb[0].downcase == :kanyewest %>
-        <img src="https://pbs.twimg.com/profile_images/585565077207678977/N_eNSBXi_200x200.jpg" alt="No One Likes Kanye West More than Kanye West Loves Kanye West" class="img-circle">
-      <% elsif @celeb[0].downcase == :kimkardashian %>
-        <img src="https://pbs.twimg.com/profile_images/597101079474483200/HAEB5BuD_200x200.jpg" alt="Kim Kardashian" class="img-circle">
-      <% elsif @celeb[0].downcase == :emwatson %>
-        <img src="http://images6.fanpop.com/image/photos/35100000/Emma-Watson-Icons-emma-watson-35139250-200-200.jpg" alt="Emma Watson" class="img-circle">
-      <% elsif @celeb[0].downcase == :charliesheen %>  
-        <img src="https://pbs.twimg.com/profile_images/420259567524519936/sHTDLeQQ_200x200.jpeg" alt="Charlie Sheen" class="img-circle">
-      <% elsif @celeb[0].downcase == :jeffkatzy %>  
-        <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_0_200x200.png" alt="Jeff Katz" class="img-circle">
-        <h4>Jeff may be narcissistic, but he did not bother to put up a profile picture...</h4>
-      <% elsif @celeb[0].downcase == :oprah %> 
-        <img src="https://pbs.twimg.com/profile_images/517424562279944192/HPYrGBlP_200x200.jpeg" alt="Oprah class="img-circle"">
-      <% elsif @celeb[0].downcase == :aviflombaum %>   
-        <img src="https://pbs.twimg.com/profile_images/464511280833785856/oVjSmCu9_200x200.jpeg" alt="Avi Flombaum" class="img-circle">
-      <% elsif @celeb[0].downcase == :realdonaldtrump %>
-        <img src="https://pbs.twimg.com/profile_images/1980294624/DJT_Headshot_V2_200x200.jpg" alt="The Donald" class="img-circle">
-      <% elsif @celeb[0].downcase == :billgates %> 
-        <img src="https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi_200x200.jpeg" alt="Bill Gates" class="img-circle">
-      <% elsif @celeb[0].downcase == :benedictcumb %>
-        <img src="https://pbs.twimg.com/profile_images/378800000585651017/9c3cb98d9e75d4c99c86d1b2f18a3674_200x200.jpeg" alt="Benedict Cumberbatch" class="img-circle">
-      <% elsif @celeb[0].downcase == :pontifex %>
-        <img src="https://pbs.twimg.com/profile_images/507818066814590976/KNG-IkT9_200x200.jpeg" alt="Pope Francis" class="img-circle"> 
-      <% else @celeb[0].downcase == :dalailama %>     
-        <img src="https://pbs.twimg.com/profile_images/529214699041067008/fqPBAr5s_200x200.jpeg" alt="Dalai Lama" class="img-circle">  -->
-      <% end %>
-    </div>
+  <div class="thumb_div img-circle">
+   <img class="thumb" src="<%= @image_search.first.uri %>">
+  </div>
+
 </div>
 <br>
 <br>

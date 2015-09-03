@@ -13,15 +13,15 @@ class HomeController < ApplicationController
       @handle.run
       redirect_to "/show/#{@handle.id}"
     else 
-      # @handle = User.new
       render :index
-      # should be render
     end
   end
 
   def show
     @handle = User.find(params[:id])
     @celeb = @handle.find_closest_celeb
+    @image_search = Google::Search::Image.new(:query => @celeb[0].to_s, :image_size => :medium)
+  
   end
 
   def topten   
