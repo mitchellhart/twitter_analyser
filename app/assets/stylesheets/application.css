@@ -12,11 +12,11 @@
  *
  *= require_self
  *= require bootstrap.min.css
- *= require 'narcissism'
- *= require social-share-button
- *= require style1
  *= require font-awesome
-
+ *= require social-share-button
+ *= require 'narcissism'
+ *= require style1
+ *= require app
  */
 
  
