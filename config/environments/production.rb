@@ -4,6 +4,7 @@ Rails.application.configure do
    config.assets.precompile += %w( 
     *.svg *.eot *.woff *.ttf *.png *.jpg *.jpeg *.gif
   )
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

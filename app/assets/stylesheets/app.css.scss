@@ -11,6 +11,24 @@
   font-style: normal;
 }
 
+body {
+  height: 100%;
+  
+}
+
+footer {
+  height: 60px;
+}
+
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
 .thumb_div { 
     width: 200px;
     height: 200px;
