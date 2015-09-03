@@ -20,6 +20,5 @@
 //= require classie.js
 //= require demo1.js
 
-
 //= require_tree .
 
