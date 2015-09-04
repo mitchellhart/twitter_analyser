@@ -1,3 +1,5 @@
+<div class="wrap">
+
 <h2><u>Top 10:</u></h2>
 
 <% @topten.each_with_index do |handle, idx| %>
@@ -8,5 +10,6 @@
       <%= handle.score_f %> 
   </h3>
 <%end %>
+    <input type="button" value="Back" onclick="history.back(-1)" />
 
-
+</div>
