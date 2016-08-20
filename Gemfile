@@ -28,9 +28,6 @@ gem 'pry'
 gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'google-search', '~> 1.0.3'
-
-gem "google_custom_search_api"
 
 gem "font-awesome-rails"
 
