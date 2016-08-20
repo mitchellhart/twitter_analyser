@@ -48,6 +48,7 @@ group :production do
 # replaces sqlite3 with pg for deploying on Heroku
   gem 'pg'
   gem 'rails_12factor'
+  
 end
 
 group :development, :test do
