@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+#added 07-20-2016
 require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
