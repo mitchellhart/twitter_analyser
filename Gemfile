@@ -30,6 +30,8 @@ gem 'figaro'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'google-search', '~> 1.0.3'
 
+gem "google_custom_search_api"
+
 gem "font-awesome-rails"
 
 # Use Unicorn as the app server

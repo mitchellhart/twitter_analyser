@@ -53,7 +53,7 @@
     </h3>
   </div>
   <div class="thumb_div img-circle">
-   <img class="thumb" src="<%= @image_search.first.uri %>">
+    <%= image_tag @celeb[0], class: "thumb", size: "100" %>
   </div>
 
 </div>
@@ -61,7 +61,6 @@
 <br>
 
 <!-- buttons for trying another handle or for sharing on social media -->
-
 
     <a href="/">
       <input type="button" value="Try Another">
@@ -80,6 +79,7 @@
     <br><br>
 
     <%= social_share_button_tag("I scored a " + @handle.score_f.to_s + " out of 10 on the narcissism scale.", :url => "http://areyouanarcissist.com") %>
+
 
    <div class="overlay overlay-hugeinc">
       <button type="button" class="overlay-close">Close</button>

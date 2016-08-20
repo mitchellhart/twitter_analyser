@@ -67,9 +67,14 @@ GEM
       activesupport (>= 4.1.0)
     google-search (1.0.3)
       json
+    google_custom_search_api (2.0.0)
+      addressable
+      httparty
     http (0.6.4)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -90,6 +95,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     naught (1.0.0)
     nokogiri (1.6.6.2)
@@ -191,6 +197,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   google-search (~> 1.0.3)
+  google_custom_search_api
   jbuilder (~> 2.0)
   jquery-rails
   pg
