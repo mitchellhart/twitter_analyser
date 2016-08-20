@@ -20,7 +20,6 @@ class HomeController < ApplicationController
   def show
     @handle = User.find(params[:id])
     @celeb = @handle.find_closest_celeb
-    @image_search = Google::Search::Image.new(:query => @celeb[0].to_s, :image_size => :medium)
   
   end
 
