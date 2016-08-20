@@ -4,4 +4,4 @@ We use our own custom language-recognition algorithm to analyze your (or anyone 
 
 Created by Anna Ershova and Mitchell Hart at the Flatiron School, 2015.
 
-areyouanarcissist.com
+www.areyouanarcissist.com
