@@ -9,9 +9,14 @@ class HomeController < ApplicationController
   def handle_valid?
     handle = @handle.name.strip
     if /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(handle).to_s == handle# returns nil or a match
-      @handle.save
-      @handle.run
-      redirect_to "/show/#{@handle.id}"
+      
+      if @handle.score_f == nil
+        redirect_to "/error"
+      else
+        @handle.save
+        @handle.run
+        redirect_to "/show/#{@handle.id}"
+      end
     else 
       render :index
     end

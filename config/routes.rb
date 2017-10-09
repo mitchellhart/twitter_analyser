@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/show/:id' => 'home#show'
   post 'home/index' => 'home#new', as: :post
   get '/topten' => 'home#topten'
+  get '/error' => 'home#error'
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
