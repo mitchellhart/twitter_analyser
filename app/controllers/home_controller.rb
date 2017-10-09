@@ -9,13 +9,15 @@ class HomeController < ApplicationController
   def handle_valid?
     handle = @handle.name.strip
     if /^[A-Za-z0-9_]{1,15}|^@[A-Za-z0-9_]{1,15}/.match(handle).to_s == handle# returns nil or a match
-      
-      if @handle.score_f == nil
-        redirect_to "/error"
-      else
-        @handle.save
-        @handle.run
+      @handle.save
+      @handle.run
+      @handle = User.last
+      puts "----------- handle score = #{@handle.score_f}"
+      if @handle.score_f != nil
         redirect_to "/show/#{@handle.id}"
+      else
+
+        redirect_to "/error"
       end
     else 
       render :index
@@ -29,7 +31,7 @@ class HomeController < ApplicationController
   end
 
   def topten   
-    @topten = User.select(:name, :score_f).order(score_f: :desc).limit(10).uniq(:name)
+    @topten = User.select(:name, :score_f).where.not(score_f: nil).where.not(name: "").order(score_f: :desc).limit(10).uniq(:name)
   end
 
 end

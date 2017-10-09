@@ -41,7 +41,14 @@ class User < ActiveRecord::Base
         collect_with_max_id do |max_id|
           options = {count: 200, include_rts: true}
           options[:max_id] = max_id unless max_id.nil?
-          user_timeline(user, options) # shows an array list of tweet objects
+          begin
+            user_timeline(user, options) # shows an array list of tweet objects
+          rescue Twitter::Error::Unauthorized => error
+            puts "error happened here"
+            @@score = nil
+            return nil
+          end
+
         end
       rescue Twitter::Error::TooManyRequests => error
         sleep error.rate_limit.reset_in + 1
@@ -51,7 +58,9 @@ class User < ActiveRecord::Base
       
       @handle = User.last
       all_tweets = client.get_all_tweets("#{@handle.name}")
-      parse_tweets(all_tweets)
+      if all_tweets != nil
+        parse_tweets(all_tweets)
+      end
 
   end #ends start_parse
 
@@ -86,8 +95,18 @@ class User < ActiveRecord::Base
   def run
     @handle = User.last
     @handle.start_parse
-    @handle.score_f = @@score.round(1)
-    @handle.save
+    puts "user score = #{@@score}"
+    
+    if @@score != nil
+      puts " ------> score is NOT nil"
+      @handle.score_f = @@score.round(1)
+      @handle.save
+    else
+      puts " ------> score is TOTALLY nil"
+      @handle.score_f = nil
+      @handle.save
+    end
+
   end
 
   def find_closest_celeb
